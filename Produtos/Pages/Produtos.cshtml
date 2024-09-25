@@ -1,0 +1,21 @@
+﻿@page
+@model Produtos.Pages.ProdutosModel
+@{
+    ViewData["Title"] = "Lista de Produtos";
+}
+<h2>Lista de Produtos</h2>
+ <form method="post">
+  <div>
+   <label for="NovoProduto">Adicionar Novo Produto:</label>
+   <input type="text" asp-for="NovoProduto" required />
+   <button type="submit">Adicionar</button>
+  </div>
+</form>
+
+<h3>Produtos:</h3>
+<ul>
+ @foreach (var produto in Model.Produtos)
+{
+  <li>@produto</li>
+}
+</ul>
